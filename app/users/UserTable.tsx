@@ -25,10 +25,10 @@ const UserTable = async ({ sortOrder }: PropType) => {
         <thead>
           <tr>
             <th>
-              <Link href="/user?sortOrder=name">Name</Link>
+              <Link href="/users?sortOrder=name">Name</Link>
             </th>
             <th>
-              <Link href="/user?sortOrder=email">email</Link>
+              <Link href="/users?sortOrder=email">email</Link>
             </th>
           </tr>
         </thead>

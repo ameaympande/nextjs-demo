@@ -1,5 +1,6 @@
 import React from "react";
 import UserTable from "./UserTable";
+import Link from "next/link";
 
 type PropType = {
   searchParams: { sortOrder: String };
@@ -8,7 +9,10 @@ const userPage = async ({ searchParams: { sortOrder } }: PropType) => {
   return (
     <>
       <div className="p-4">
-        <p className="text-2xl font-bold p-4">Users</p>
+        <h1>Users</h1>
+        <Link href="/users/new" className="btn ">
+          New User
+        </Link>
         <UserTable sortOrder={sortOrder} />
       </div>
     </>
