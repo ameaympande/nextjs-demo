@@ -4,12 +4,9 @@ import {
   useParams,
   usePathname,
   useSearchParams,
+  redirect
 } from "next/navigation";
 import React from "react";
-
-type props = {
-  params: { id: number };
-};
 
 const UserDetails = () => {
   const params = useParams();
@@ -18,7 +15,12 @@ const UserDetails = () => {
 
   const search = searchParams.get("search");
 
-  if (params.id > 10) notFound();
+  const userId = Number(params.id);
+
+  if (isNaN(userId) || userId > 10) notFound();
+
+  if(userId <= 5) redirect("/")
+
   return (
     <>
       <div>UserDetails {params.id}</div>
